@@ -1,0 +1,31 @@
+<nav class="main_nav">
+	<ul class="d-flex flex-row align-items-start justify-content-start">
+		<li><a href="{% url 'Home' %}" <a style="color:white;"">Home</a></li>
+		<li class="nav-item dropdown">
+			<a style="color:white;" class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Centers
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a></li>
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Kollam">Kollam</a></li>
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Pathanamthitta">Pathanamthitta</a></li>
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</a></li>
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Kottayam">Kottayam</a></li>
+				<li><a style="color:black;" class="dropdown-item" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>
+
+			</ul>
+		</li>
+
+		{% if user.is_authenticated %}
+		<li style="color:white;"><b>Hello {{user.username}}</b></li>
+		<li><a style="color:white;" href="{% url 'Logout' %}">Logout</a></li>
+		{% else %}
+		<li><a style="color:white;" href="{% url 'Login' %}">Login</a></li>
+		<li><a style="color:white;" href="{% url 'Registration' %}">Registration</a></li>
+		<li><a style="color:white;" href="{% url 'Login' %}">Donate Blood</a></li>
+		{% endif %}
+
+	</ul>
+</nav>
+<div style="color:Maroon;"><b>Call us: 965698547856</b></div>
+
